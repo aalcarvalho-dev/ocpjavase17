@@ -1,2 +1,6 @@
 # ocpjavase17
-OCP 17 Preparation
+## Capítulo 1
+
+- Modificadores opcionais no método _main_:
+
+> public **final** static void main(**final** String[] args){}
