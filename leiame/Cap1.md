@@ -66,3 +66,29 @@ java -cp classes packageb.ClassB
 java -classpath classes packageb.ClassB
 java --class-path classes packageb.ClassB
 ```
+- Criando um arquivo JAR. Utilizar o comando ```jar -cvf myNewFile.jar -C classes .``` o argumento depois do -C
+é o diretório a ser agrupado e o "." indica onde salvar o arquivo .jar
+- Criando Objetos. Ordem de inicialização:
+1. Fields e Instance Initializer blocks na ordem em que aparecem
+2. O Construtor executa depois que todos os fields e Instance Initializers blocks executam
+- DataTypes. 8 primitivos (1by-2s-4i-8l-4flo-8do-boo-2char). Um primitivo é
+um simples valor em memória, como um número ou caracter.  
+Um float requer a letra f ou F acompanhando. Caso contrário, esse decimal é interpretado como um double.  
+Um long requer um l ou L seguindo o número. Caso contrário, java interpreta esse número como um int.  
+O tamanho de um boolean não é especificado e depende da jvm.  
+Os tipos short e char são similares. 16 bits ambos. short é signed, ou seja, vai do negativo ao positivo.
+já o char é exclusivamente positivo, até 65535 (conta o O). Eles podem sofrer cast entre si, sem problemas.  
+Java assume que um número literal é um inteiro. Isso aqui não compila: ```long max = 325325325698```. Pra compilar,
+necessário incluir um L ao lado do número. Sugestão é usar maiúsculo, pois o contrário pode
+parecer o número 1.  
+Sistemas de numeração em outras bases. Octal (0 - 7): o primeiro 0 é o prefixo. ex.: 017. Hexadecimal (0 -9 , A - F), prefixo 0x ou 0X. ex: 0xFF e é case insensitive.  
+Binário (0 - 1), prefixo 0b ou 0B. ex.: 0b10, 0B10.  
+Os literais podem ter underscore pra facilitar a leitura. ex.: ```int million = 1_000_000;```. Alguns exemplos:
+```
+double notAtStart = _1000.00; //não compila
+double notAtEnd = 1000.00_; //não compila
+double notByDecimal = 1000_.00; //não compila
+double annoyingButLegal = 1_00_0.0_0; //ok, compila
+double reallyUgly = 1_______2; // também compila
+```
+Tipos de referência. 
