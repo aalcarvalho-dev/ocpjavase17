@@ -91,4 +91,97 @@ double notByDecimal = 1000_.00; //não compila
 double annoyingButLegal = 1_00_0.0_0; //ok, compila
 double reallyUgly = 1_______2; // também compila
 ```
-Tipos de referência. 
+Tipos de referência. primitivos em minúsculo e referência em maiúsculo por convenção.  
+Primitivos não podem ser associados a null. Referência, sim. ```int value = null //não compila```.  
+Da mesma forma, primitivos não chamam métodos: ```int len = reference.length() //não compila```
+- Criando Classes Wrapper. Segue alguns exemplos que compilam:
+```
+int num1 = 5;
+int num2 = Integer.valueOf(6);
+Integer num4;
+int num5 = 2;
+Integer num3 = 7;
+num1 = num3;
+num4 = num5;
+System.out.println(num1);
+System.out.println(num4);
+int primitive = Integer.parseInt("123");
+Integer wrapper = Integer.valueOf("123");
+System.out.println(primitive);
+System.out.println(wrapper);
+Double apple = Double.valueOf(200.2);
+System.out.println(apple.intValue());
+System.out.println(apple.byteValue());
+System.out.println(apple.shortValue());
+System.out.println(apple.longValue());
+System.out.println(apple.floatValue());
+System.out.println(apple.doubleValue());
+```
+Definindo Text Blocks. Atribui a uma String o seguinte padrão: Após o sinal de atribuição, digita ```"""```. Quebra a linha e na sequência digita o texto. A partir do ponto mais a esquerda do texto, o espaçamento que for dado define o espaço em banco essencial. O fim do bloco é definido igualmente por ```"""```. Caso esse padrão esteja numa linha solo, e não ao final do texto, essa linha também é considerada. Exemplos:
+```
+String eyeTest = "\"Java Study Guide\"\n  by Scott & Jeanne";
+System.out.println(eyeTest);
+String textBlock = """
+"Java Study Guide"
+ by Scott & Jeanne""";
+System.out.println(textBlock);
+String pyramid = 
+    """
+      *
+     *
+    *
+    """;
+System.out.println(pyramid);
+```
+Na formatação do text block, temos algumas distinções em relação a String:
+```
+\"  "   "
+\"""    n/a     """
+\"\"\"  """     """
+Space   Space   Ignored
+\s      2 spcs  2 spcs
+\ (end) n/a     Omits new line on that line
+```
+Declarando Variáveis. Regra:
+```
+- Comecaçam com letra, currency ou _.
+- Identificador deve conter apenas letra, currency ou _
+- Não começam com número, mas pode ter em outra posição
+- Não pode usar uma palavra reservada do Java
+- Não pode ter um _ simples como identificador
+```
+Declarando múltiplas variáveis. Regra:
+```
+- Posso declarar e inicializar múltiplas variáveis na mesma declaração
+- As variáveis devem ser todas do mesmo tipo
+- Uma declaração é definida por ;
+- Um snippet é definido por ,
+Ex.: String s1, s2;
+String s3 = "yes", s4 = "no";
+int i1, i2, i3 = 0; //3 declarações, 1 inicialização
+int num, String value; //não compila
+int num; String value; //ok
+double d1, double d2; //não compila. duplicidade tipo
+int i3; i4; //não compila. i4 não tem tipo.
+```
+Inicializando variáveis. Variáveis locais. Regra:
+```
+- variável local final não pode ser alterada
+final int y = 10; int x = 20;
+y = x + 10; //não compila
+- Devemos inicializá-la antes do uso, pois não possuem valor padrão.
+int y = 10; int x;
+int reply = x + y; // não compila
+```
+Inferindo tipo com _var_. Regra:
+```
+- Usado apenas como variável local
+Ex.: var name = "hello"; var size = 7;
+- Se usado como variável de instância, não compila
+Ex.: public class VarKeyword{
+    var tricky = "Hello"; //não compila
+}
+- Náo é possível reassociar a um valor de outro tipo
+Ex.: var number = 7; number = 4;
+number = "five";//não compila
+```
