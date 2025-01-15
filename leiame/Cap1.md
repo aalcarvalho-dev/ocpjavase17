@@ -185,3 +185,19 @@ Ex.: public class VarKeyword{
 Ex.: var number = 7; number = 4;
 number = "five";//não compila
 ```
+### Erros nas Review Questions
+(2) Atenção ao marcar alternativas exclusivas. A questão pedia a ordem do PIC, porém as alternativas incluem declarações não obrigatórias, como P e I. Nesse caso, considera também as associações entre PC e IC e não somente o PIC.  
+(5) A referência brownBear possui uma variável de instância pandaBear. Essa referência aponta para polarBear (B2), que foi criado na linha 10. Quando brownBear = null, a referência para polarBear é perdida, tornando o objeto elegível para GC.  
+(7) Um text block é um bloco apenas de texto. Não há concatenação desse bloco com variáveis (usando o +nomeVariavel que usaríamos com uma String pura). Nesse caso, não podemos presumir que valores são 0 nas variáveis citadas. O texto é escrito literalmente.  
+(8) Um var não pode inicializado como null, porém pode ser associado a um null se o tipo inferido não for um primitivo. ex.: ```var morning = ""; morning = null //ok```. Já ```var evening = 2; var = null //não compila ou var spring = null; //tb não```. A opção ```var day = 1/0``` funciona, pq a pergunta é se o código compila. Embora essa sentença
+gere erro em tempo de execução, esse código compila. _var_ também não pode ser usada em uma associação multi-variável. Isso, não funciona: ```var fall = 2, autumn = 2;```  
+(9) Uma variável de classe do tipo String (leia-se variável estática) tem seu default setado para null. Ex.: ```private static String nome;```
+(12) Java não suporta setar valor padrão em parâmetro de método. Ex.: ```(int length=3)//não compila```  
+(14) short não recebe um long. ```short numPets = 5L```. int não recebe um double. ```int numGrains = 2.0```.  
+(15)  
+(16)  
+(18)  
+(19)  
+(20)  
+(22)  
+(23)
