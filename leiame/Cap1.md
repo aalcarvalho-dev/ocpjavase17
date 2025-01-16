@@ -194,10 +194,10 @@ gere erro em tempo de execução, esse código compila. _var_ também não pode 
 (9) Uma variável de classe do tipo String (leia-se variável estática) tem seu default setado para null. Ex.: ```private static String nome;```
 (12) Java não suporta setar valor padrão em parâmetro de método. Ex.: ```(int length=3)//não compila```  
 (14) short não recebe um long. ```short numPets = 5L```. int não recebe um double. ```int numGrains = 2.0```.  
-(15)  
-(16)  
-(18)  
-(19)  
-(20)  
-(22)  
-(23)
+(15) Um objeto pode nunca sair de heap se o programa terminar antes do gc atuar; Uma variável marcada como final pode ser elegível para gc no fim do seu escopo, desde que não tenha uma referência a ela fora do escopo.  
+(16) Num text block, o ```\``` anula a quebra de linha e o ```\s``` mantém um espaço em branco  
+(18) Um _var_ não pode ser usado como parâmetro de construtor, de método, como variável de instância ou de classe; O tipo de um _var_ é conhecido em tempo de compilação.  
+(19) O método Long.max(a,b), devolve o máximo entre dois números dados, logo, ```Long.max(100,100)``` retorna _100_  
+(20) Atenção ao nome de método. Embora possa começar com letra maiúscula ```public void PoliceBox()``` e ser idêntico ao nome da classe, não é um construtor, pois tem um void e é um método válido. Esse código compila!  
+(22) ```int amount = 9L``` não compila. Compilaria se fosse long. Da mesma forma, ```int amount = 1_2.0```também não compila. Compilaria se fosse double.
+(23) Como o programa não compila, a linha que exibiria o número _49.0_ não é executada, portanto o programa não imprime a saída.
