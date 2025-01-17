@@ -3,3 +3,4 @@
 ```a+b. a e b são operandos. + é o operador```
 A precedência importa. ```double reward = 3 + 2 * --cookies; //reward = 9```  
 Bitwise complement operator rule. Multiplica por -1 e subtrai 1. Ex.: ```int value = 3; -1*value - 1 = -4```
+Não podemos aplicar um operador de negação (-) num booleano, nem um operador complementar lógico (!) em um numérico.
